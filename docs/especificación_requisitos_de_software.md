@@ -2661,51 +2661,21 @@ los requisitos. Son parte integral del SRS.
 
 ### 4.1 Modelos de casos de uso
 
-<!-- 
-Los casos de uso describen interacciones completas entre actores y el sistema
-para lograr un objetivo específico. Complementan los requisitos funcionales
-proporcionando contexto y flujos de trabajo.
--->
+
 
 **Lista de Casos de Uso del Sistema:**
 
-- **CU-001**: Realizar Préstamo de Material (documentado arriba)
-- 
-- **CU-002**: Realizar Devolución de Material
-- **CU-003**: Registrar Nuevo Usuario
-- **CU-004**: Buscar Material en Catálogo
-- **CU-005**: Crear Reserva de Material
-- **CU-006**: Renovar Préstamo
-- **CU-007**: Procesar Pago de Multa
-- **CU-008**: Generar Reporte de Materiales Más Prestados
-- **CU-009**: Configurar Parámetros del Sistema
-- **CU-010**: Realizar Respaldo de Datos
+- **CU-001**: Mirar menu
+- **CU-002**: Pagar cuenta
+- **CU-003**: Registrar carnet
+- **CU-004**: Hacer pedido
+- **CU-005**: Añadir menu semanal
 - ... [continuar según necesidad]
-<br>
-
-<!--
-ESTRUCTURA DE UN CASO DE USO:
-
-**Plantilla de Caso de Uso:**
-
-| Campo | Descripción |
-|-------|-------------|
-| **ID** | CU-001 |
-| **Nombre** | [Nombre descriptivo del caso de uso] |
-| **Actores** | [Quién interactúa: Usuario, Bibliotecario, Sistema externo, etc.] |
-| **Descripción** | [Breve descripción del objetivo del caso de uso] |
-| **Precondiciones** | [Estado que debe existir antes de ejecutar el caso de uso] |
-| **Postcondiciones** | [Estado después de ejecutar exitosamente el caso de uso] |
-| **Flujo Principal** | 1. [Paso 1]<br>2. [Paso 2]<br>3. [Paso 3]<br>... |
-| **Flujos Alternativos** | **2a**. Si [condición]:<br>  2a1. [Paso alternativo]<br>  2a2. [Volver al paso X] |
-| **Flujos de Excepción** | **3a**. Si [error]:<br>  3a1. [Manejo del error]<br>  3a2. [Fin del caso de uso o recuperación] |
-| **Requisitos Relacionados** | [RF-XXX, RF-YYY] |
-
-**Ejemplo Completo:**
--->
 
 
-**CU-001: Realizar Préstamo de Material**
+
+
+**CU-001: Mirar menu**
 
 | Campo | Descripción |
 |-------|-------------|
@@ -2721,21 +2691,71 @@ ESTRUCTURA DE UN CASO DE USO:
 | **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
 <br>
 
+**CU-002: Pagar cuenta**
 
 | Campo | Descripción |
 |-------|-------------|
-| **ID** | CO-001 |
-| **Nombre** | pagar cuenta|#
+| **ID** | CU-002 |
+| **Nombre** | pagar cuenta|
 | **Actores** | cajero (primario), Usuario del restaurante (secundario) |
 | **Descripción** | permite al carejo realizar el pago de los productos consumidos por el usuario|
 | **Precondiciones** | 1. se validan los productos pedidos por el usuario <br>2. se le escanea el carnet al usuario
 <br>3. se crea la factura <br>4. se le cobra lo correspondiente al usuario |
 | **Postcondiciones** | 1. el sistema debe tener registrado los productos pedidos por el usuario <br>2. el sistema debe hacer la suma de los precios de los productos vendidos<br>3. el sistema debe crear una factura <br>4. el sistema debe guardar una copia de la factura en la base de datos y imprimir una fisica
 | **Flujo Principal** | 1. se validan los productos pedidos por el usuario <br>2. se le escanea el carnet, para validar su rol y ańadirle su descuento correspondiente (si se puede) <br>3. se crea la factura <br>4. se imprime una copia de la factura <br>5.se le cobra lo correspondiente al usuario |
-| **Flujos Alternativos** | **4a. compra no registrada**:<br>  4a1. El sistema muestra mensaje "compra no registrada"<br>  4a2. El sistema ofrece opción "llamar a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Flujos Alternativos** | **4a. compra no registrada**:<br>  4a1. El sistema muestra mensaje "compra no registrada"<br>  4a2. El sistema ofrece opción "
+a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
 | **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
 | **Requisitos Relacionados** | CO-01 (pagar cuenta)<br>CO-02 (validar carnet)<br>CO-03 (aplicar descuento)<br>CO-04 (generar factura)|
 <br>
+**CU-003: Registrar carnet**
+
+| Campo | Descripción |
+|-------|-------------|
+| **ID** | CU-003 |
+| **Nombre** | Registrar carnet|
+| **Actores** | administrador (primario) |
+| **Descripción** | Permite al usuario ańadir toda la información correspondiente a un carnet |
+| **Precondiciones** | 1. Al usuario se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
+| **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
+| **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
+| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
+| **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
+<br>
+
+**CU-004: Hacer pedido**
+
+| Campo | Descripción |
+|-------|-------------|
+| **ID** | CU-004 |
+| **Nombre** | Hacer pedido|
+| **Actores** | usuario del restaurante (primario) |
+| **Descripción** | permite al usuario realizar un pedido con los productos que se encuentren en el catálogo del menu|
+| **Precondiciones** | 1. Al usuario se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
+| **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
+| **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
+| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
+| **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
+<br>
+
+**CU-005: Añadir menu semanal**
+
+| Campo | Descripción |
+|-------|-------------|
+| **ID** | CU-005 |
+| **Nombre** | Añadir menu semanal|
+| **Actores** | chef (primario)|
+| **Descripción** | permite al cocinero actualizar, ańadir o eliminar productos que se encuentren en el menu|
+| **Precondiciones** | 1. Al usuario se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
+| **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
+| **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
+| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
+| **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
+<br>s
+
 
 <!-- 
 Opción 2: Plantilla para Subcasos Simples
