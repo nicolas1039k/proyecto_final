@@ -2748,7 +2748,7 @@ a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br
 | **Nombre** | Añadir menu semanal|
 | **Actores** | chef (primario)|
 | **Descripción** | permite al cocinero actualizar, ańadir o eliminar productos que se encuentren en el menu|
-| **Precondiciones** | 1. Al usuaro se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
+| **Precondiciones** | 1. Al usuao se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
 | **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
 | **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
 | **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
