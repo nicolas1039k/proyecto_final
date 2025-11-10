@@ -2686,7 +2686,7 @@ los requisitos. Son parte integral del SRS.
 | **Precondiciones** | 1. Al usuario se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
 | **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
 | **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
-| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
 | **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
 | **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
 <br>
@@ -2716,12 +2716,12 @@ a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br
 | **Nombre** | Registrar carnet|
 | **Actores** | administrador (primario) |
 | **Descripción** | Permite al usuario ańadir toda la información correspondiente a un carnet |
-| **Precondiciones** | 1. Al usuario se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
-| **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
-| **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
-| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
-| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
-| **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
+| **Precondiciones** | 1. identificar usuario<br>2. verificar datos <br>3. crear nuevo usuario |
+| **Postcondiciones** | 1. el sistema debe permitir crear un nuevo usuario <br>2. añadir los datos en el nuevo usuario <br>3. el sistema debe verificar que no falte informacion<br>4. el nuevo usuario debe quedar dentro de la base de datos  |
+| **Flujo Principal** | 1. el sistema empieza a crear el carnet<br>2. el administrador introducira la informacion nesesaria (nombre, apellidos, rol, estado, etc) <br>3. se verificara el rol del usuario<br>4. en caso tal de tener un rol que posea algun descuento, se le aplicara al carnet <br>5. el administrador finalizara la creacion del usuario  |
+| **Flujos Alternativos** | **4a. datos faltantes**:<br>  4a1. El sistema muestra mensaje "datos faltantes"<br>  4a2. El sistema pondra en rojo los espacios con informacion faltante <br>  4a3. en caso tal de no poder o no querer seguir creando el usuario, se podra cancelar el proceso<br><br>**7a. datos duplicados**:<br>  7a1.  El sistema nuestra un mensaje "datos duplicados"<br>  7a2. Si esto sucede el sistema informara con el color rojo el campo donde sucede este echo<br>  7a3. si esta informacion es erronea, se cancelara el proceso de "creacion de usuario" |
+| **Flujos de Excepción** | **5a. informacion erronea**:<br>  5a1. si el sistmea detecta datos duplicados informara de una cituacion  de "informacion erronea"<br>  5a2. el sistema ofrecera llamar al usuario <br>  5a3. si el usurio no quiere llamar al usuario se finalizara  <br>  5a4. el proceso Fin del caso de uso<br>  |
+| **Requisitos Relacionados** | CU-01 (registrar usuario)<br>CU-02 (validar carnet) |
 <br>
 
 **CU-004: Hacer pedido**
@@ -2732,12 +2732,12 @@ a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br
 | **Nombre** | Hacer pedido|
 | **Actores** | usuario del restaurante (primario) |
 | **Descripción** | permite al usuario realizar un pedido con los productos que se encuentren en el catálogo del menu|
-| **Precondiciones** | 1. Al usuario se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
-| **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
-| **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
-| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
-| **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
-| **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
+| **Precondiciones** | 1. el usuario entra a la pagina<br>2. mira el menu <br>3. realiza el pedido |
+| **Postcondiciones** | 1. la pagina debe mostrar el menu <br>2. los productos pedidos deben quedar registrados <br>3. el sistema debe registrar el pedido  |
+| **Flujo Principal** | 1. el usuario visualizara el menu<br>2. el usuario ira pidiendo los productos que quiere y añadiendolos al carrito <br>3. el sistema mostrara el total del pedido en la pestaña "carrito" <br>4. se le creara un comprobante de la compra  |
+| **Flujos Alternativos** | **4a. compra no registrada**:<br>  4a1. El sistema muestra mensaje "compra no registrada"<br>  4a2. El sistema ofrece opción "llamar a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Flujos de Excepción** | **5a.producto agotado**:<br>  5a1. El sistema muestra el mensaje "producto agotado" <br>  5a2. el sistema redirigira al usuario a la pesataña menu <br>  5a3. Fin del caso de uso<br>  |
+| **Requisitos Relacionados** | CU-01 (Hacer pedido)<br>CU-02 (Resive el servicio solicitado )<br>CU-03 (Evalua el servicio y el menu)<br>CU-04 (ingresar, identificado por el carnet)<br>CU-05 (Realiza el pago)<br>CU-06 (verificar menu y precio) |
 <br>
 
 **CU-005: Añadir menu semanal**
@@ -2748,12 +2748,12 @@ a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br
 | **Nombre** | Añadir menu semanal|
 | **Actores** | chef (primario)|
 | **Descripción** | permite al cocinero actualizar, ańadir o eliminar productos que se encuentren en el menu|
-| **Precondiciones** | 1. Al usuao se le válido el carnet<br>2. El usuario NO está suspendido ni tiene multas |
-| **Postcondiciones** | 1. La página debe redirigir al usuario a una nueva pagina<br>2. la nueva página debe contener el menú semanal  |
-| **Flujo Principal** | 1. El sistema solicita identificarse,mediante un carnet<br>2. El usuario escanea su carnet <br>3. el sistema valida el carnet<br>4. El usuario escanea el código QR<br>5. El sistema redirige al usuario a una nueva pestańa <br>6. El usuario visualiza el menú semanal<br>7. El usuario hace su pedido |
-| **Flujos Alternativos** | **4a. carnet no valido**:<br>  4a1. El sistema muestra mensaje "carted invalido"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. error en la pagina**:<br>  7a1.  El sistema nuestra un mensaje "error"<br>  7a2. Si esto sucede, el sistema ofrece opción "reportar problema"<br>  7a3. un usuario de soporte será alertado <bro> 7a4. se soluciona el problema |
+| **Precondiciones** | 1. el chef verifica productos en stock<br>2. el chef crea un menu <br>3. el cheft agrega el nuevo menu a la base de datos|
+| **Postcondiciones** | 1. la pagina dejara visualizar el inventario actual<br>2. el sistema permitira añadir el nuevo menu semanal  |
+| **Flujo Principal** | 1.el chef visualizara el inventario actual <br>2. dependiendo de la cantidad de los productos en stok creara un nuevo menu <br>3. el chef agregara rl nuevo menu en la base de datos<br>4. el sistema verificara que no falte informacion <br>5. el sistema validara el nuevo menu semanal |
+| **Flujos Alternativos** | **4a. producto inexistente**:<br>  4a1. El sistema muestra mensaje "producto inexistente"<br>  4a2. El sistema ofrece opción "llamar su soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br>  4a4. Si el usuario cancela, volver al paso 2<br><br>**7a. producto faltante**:<br>  7a1.  El sistema nuestra un mensaje "producto faltante"<br>  7a2. Si esto sucede el sistema informara con el color rojo el campo donde sucede este echo<br>  7a3. si esta informacion es erronea, se cancelara el proceso de "creacion de usuario" |
 | **Flujos de Excepción** | **5a. Usuario suspendido o con multas vencidas**:<br>  5a1. El sistema muestra advertencia "Usuario suspendido" o "Usuario tiene multas vencidas por $[monto]"<br>  5a2. El sistema NO permite continuar con la venta<br>  5a3. Fin del caso de uso<br>  |
-| **Requisitos Relacionados** | CU-01 (visualizar menu)<br>CU-02 (Escanear QR)<br>CU-03 (consulta menú semanal) |
+| **Requisitos Relacionados** | CU-01 (Añadir menu semanal)<br>CU-02 (identidicar cantidades)<br>CU-03 (analiza ingredientes para el menu)<br>CU-04 (segun los ingrdientes, se adapta al menu) |
 <br>s
 
 
