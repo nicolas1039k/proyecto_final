@@ -84,255 +84,103 @@
 
 ## 1 INTRODUCCIÓN
 
-<!-- 
+
 ═══════════════════════════════════════════════════════════════════════════════
 SECCIÓN 1: INTRODUCCIÓN
 ═══════════════════════════════════════════════════════════════════════════════
 
-PROPÓSITO DE ESTA SECCIÓN:
-Proporcionar una visión general del documento de especificación de requisitos.
-Esta sección debe ser comprensible para TODOS los lectores, incluyendo aquellos
-sin conocimientos técnicos profundos (stakeholders, gerentes, clientes).
-
-IMPORTANCIA ACADÉMICA:
-La introducción establece el contexto del proyecto y facilita la comprensión
-del documento. Una buena introducción permite que diferentes stakeholders 
-comprendan rápidamente el propósito y alcance del sistema sin necesidad de 
-leer todo el documento.
-
-AUDIENCIA:
-- Equipo de desarrollo
-- Analistas de negocio
-- Gerentes de proyecto
-- Clientes/Stakeholders
-- Equipo de QA y testing
-- Futuros mantenedores del sistema
--->
-
 ### 1.1 Propósito
 
-<!-- 
+
 OBJETIVO DE ESTA SUBSECCIÓN:
-Explicar claramente POR QUÉ existe este documento y QUIÉN lo utilizará.
+Este SRS tiene como objetivo definir los requerimientos del sistema de gestión integrado para UniCafé, enfocado en mejorar el control de acceso, subsidios, inventarios y trazabilidad del consumo.
 
-QUÉ DEBE INCLUIR (2-4 párrafos):
-✓ Objetivo principal del documento SRS
-✓ Público objetivo específico (desarrolladores, testers, cliente, etc.)
-✓ Cómo se utilizará el documento en el ciclo de vida del proyecto
-✓ Alcance de versión o fase del proyecto (si aplica)
+Está dirigido al equipo de desarrollo y pruebas, a la administración de UniCafé y a los directivos de la UCP, quienes usarán esta información para diseñar, validar y tomar decisiones sobre el sistema.
 
-PREGUNTAS GUÍA:
-1. ¿Para qué se crea este documento?
-2. ¿Quiénes lo van a leer y usar?
-3. ¿Qué decisiones se tomarán basándose en este documento?
-4. ¿Este documento cubre todo el sistema o solo una versión/módulo?
+El documento será la guía base durante el ciclo de vida del proyecto, asegurando alineación entre necesidades, implementación y resultados esperados.
 
-ERRORES COMUNES A EVITAR:
-✗ Ser demasiado vago: "Este documento describe un sistema"
-✗ Confundir propósito del documento con propósito del sistema
-✗ No especificar la audiencia
-✗ Ser excesivamente técnico en esta sección
+Esta versión se centra en los módulos esenciales del sistema; futuras fases podrán ampliar funcionalidades y nivel de integración.
 
-EJEMPLO ACADÉMICO:
-"Este documento de Especificación de Requisitos de Software (SRS) describe los 
-requisitos funcionales y no funcionales para el Sistema de Gestión Bibliotecaria 
-'BiblioTech', versión 1.0. El propósito de este documento es establecer una base 
-común de entendimiento entre el cliente (Biblioteca Municipal Central) y el equipo 
-de desarrollo sobre lo que el sistema debe hacer y cómo debe comportarse.
-
-Este documento será utilizado por:
-- El equipo de desarrollo como guía para la implementación del sistema
-- Los analistas de QA para diseñar casos de prueba
-- El cliente para validar que sus necesidades están correctamente reflejadas
-- Los gerentes de proyecto para planificar recursos y cronogramas
-
-Las especificaciones aquí contenidas servirán como base contractual para la 
-aceptación del sistema y como referencia durante todo el ciclo de vida del 
-desarrollo."
--->
-
-[Escriba aquí el propósito de este documento. Use los párrafos necesarios para explicar claramente por qué existe este SRS y quiénes lo utilizarán.]
 
 <br>
 
 ### 1.2 Alcance
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Definir claramente QUÉ está incluido y QUÉ NO está incluido en este sistema.
+ 
+Nombre del Sistema:
+Sistema Integrado de Gestión del Restaurante Universitario – SIGRU UniCafé
 
-QUÉ DEBE INCLUIR:
-✓ Nombre oficial del sistema/software
-✓ Descripción breve de lo que hace el sistema (2-3 párrafos)
-✓ Beneficios principales que aportará
-✓ Objetivos específicos y medibles
-✓ Límites del sistema (qué NO incluye)
-✓ Relación con otros sistemas (si aplica)
+Descripción:
+El SIGRU UniCafé gestionará el control de acceso, la identificación de usuarios con subsidio, el registro de consumos y el inventario alimentario para optimizar la operación del restaurante, reducir pérdidas y mejorar la trazabilidad.
 
-ESTRUCTURA SUGERIDA:
+Beneficios Principales:
+- Control de subsidios y reducción de fraude.
+- Menor desperdicio de alimentos.
+- Mayor eficiencia operativa y mejor atención al usuario.
 
-**Nombre del Sistema:**
-[Nombre oficial completo]
+Objetivos Específicos:
+- Validar acceso y consumo por usuario.
+- Administrar subsidios y su uso.
+- Mantener inventarios actualizados y generar reportes.
 
-**Descripción:**
-[Explicar en 2-3 párrafos qué hace el sistema, cuál es su dominio de aplicación,
-y qué problema resuelve]
+Límites del Sistema:
+- No incluye pagos externos, contabilidad ni gestión avanzada de proveedores.
+- La integración con otros sistemas se realizará en fases futuras.
 
-**Beneficios Principales:**
-- [Beneficio 1: ahorro de tiempo, reducción de errores, etc.]
-- [Beneficio 2]
-- [Beneficio 3]
-
-**Objetivos del Sistema:**
-1. [Objetivo medible 1: Ej. "Reducir el tiempo de préstamo de libros de 5 a 2 minutos"]
-2. [Objetivo medible 2]
-3. [Objetivo medible 3]
-
-**Límites del Sistema (Fuera de Alcance):**
-- [Lo que NO hará el sistema: Ej. "El sistema NO manejará la contabilidad interna de la biblioteca"]
-- [Funcionalidad excluida explícitamente]
-
-EJEMPLO ACADÉMICO:
-
-**Nombre del Sistema:** Sistema de Gestión Bibliotecaria BiblioTech
-
-**Descripción:**
-BiblioTech es un sistema integral de gestión bibliotecaria diseñado para automatizar 
-las operaciones diarias de bibliotecas públicas de tamaño mediano (10,000 a 50,000 
-volúmenes). El sistema gestiona el catálogo de materiales, préstamos, devoluciones, 
-reservas, y el registro de usuarios.
-
-El sistema reemplazará el actual proceso manual de registro en tarjetas físicas y 
-planillas Excel, proporcionando una plataforma centralizada, confiable y de fácil 
-acceso para bibliotecarios y usuarios. BiblioTech también incluirá un módulo de 
-consulta en línea para que los usuarios puedan buscar materiales y verificar 
-disponibilidad desde sus hogares.
-
-**Beneficios Principales:**
-- Reducción del tiempo promedio de atención por usuario de 5 a 2 minutos
-- Eliminación del 100% de los registros en papel
-- Disponibilidad de información en tiempo real sobre el inventario
-- Reducción de pérdidas de material mediante sistema automatizado de seguimiento
-- Acceso remoto al catálogo 24/7 para los usuarios
-
-**Objetivos del Sistema:**
-1. Digitalizar el 100% del catálogo existente en los primeros 3 meses
-2. Reducir en un 60% el tiempo de procesamiento de préstamos y devoluciones
-3. Implementar sistema de notificaciones automáticas para devoluciones vencidas
-4. Proveer reportes estadísticos mensuales sobre uso de la biblioteca
-5. Garantizar disponibilidad del sistema del 99.5% durante horario de operación
-
-**Límites del Sistema (Fuera de Alcance):**
-- Gestión contable y presupuestaria de la biblioteca
-- Sistema de punto de venta para librería anexa
-- Gestión de recursos humanos y nómina del personal
-- Sistema de seguridad física del edificio (cámaras, alarmas)
-- Plataforma de e-books o biblioteca digital de contenidos
--->
-
-[Complete esta sección siguiendo la estructura sugerida arriba]
+Relación con Otros Sistemas:
+Funcionará inicialmente de forma independiente, con posibilidad de integrarse a plataformas institucionales.
 
 <br>
 
 ### 1.3 Personal involucrado
 
-<!-- 
+
 OBJETIVO DE ESTA SUBSECCIÓN:
-Identificar a todas las personas clave que participan en la definición, desarrollo,
-y validación del sistema.
 
-IMPORTANCIA:
-Esta sección es crucial para:
-- Establecer responsabilidades claras
-- Facilitar la comunicación entre stakeholders
-- Documentar la cadena de toma de decisiones
-- Permitir contacto directo cuando surjan dudas
+| Nombre                                | Rol                            | Responsabilidades                                 | Información de contacto |
+|---------------------------------------|--------------------------------|---------------------------------------------------|-------------------------|
+| Administración UniCafé                | Cliente                        | Aprobar requisitos y validar entregas del sistema | admin-unicafe@ucp.edu   |
+| Coordinación Proyecto – Ing. Sistemas | Jefe de Proyecto               | Gestionar planificación, comunicación y recursos  | jefeproy-sigru@ucp.edu  |
+| Analista del Proyecto                 | Analista de Requisitos         | Documentar y validar requerimientos               | analista.sigru@ucp.edu  |
+| Líder Técnico                         | Arquitecto/Líder de Desarrollo | Diseño técnico y supervisión del desarrollo       | devlead.sigru@ucp.edu   |
+| Responsable QA                        | Líder de Pruebas               | Garantizar calidad y control de defectos          | qa.sigru@ucp.edu        |
 
-TABLA REQUERIDA:
-Complete la siguiente tabla para cada persona involucrada en el proyecto.
-Incluya mínimo: Cliente/Patrocinador, Jefe de Proyecto, Analista Principal,
-y Líder de Desarrollo.
--->
 
-| Nombre | Rol | Responsabilidades | Información de Contacto |
-|--------|-----|-------------------|-------------------------|
-| [Nombre completo] | Cliente/Patrocinador del Proyecto | - Aprobar requisitos<br>- Proporcionar retroalimentación<br>- Validar entregas<br>- Decisiones finales sobre alcance | Email: [correo]<br>Tel: [teléfono]<br>Organización: [nombre] |
-| [Nombre completo] | Gerente/Jefe de Proyecto | - Coordinar equipo de desarrollo<br>- Gestionar recursos y cronograma<br>- Punto de contacto principal con cliente<br>- Resolución de conflictos | Email: [correo]<br>Tel: [teléfono] |
-| [Nombre completo] | Analista de Requisitos | - Elicitación de requisitos<br>- Documentación de SRS<br>- Validación con stakeholders<br>- Gestión de cambios en requisitos | Email: [correo]<br>Tel: [teléfono] |
-| [Nombre completo] | Arquitecto de Software / Líder Técnico | - Diseño de arquitectura del sistema<br>- Decisiones técnicas<br>- Revisión de código<br>- Establecer estándares de desarrollo | Email: [correo]<br>Tel: [teléfono] |
-| [Nombre completo] | Líder de QA/Testing | - Diseño de estrategia de pruebas<br>- Validación de requisitos<br>- Asegurar calidad del producto<br>- Reportes de defectos | Email: [correo]<br>Tel: [teléfono] |
 
-<!-- 
-NOTA PARA PROYECTOS ACADÉMICOS:
-En contextos académicos, pueden incluir roles como:
-- Docente/Asesor del proyecto
-- Estudiantes por rol (analista, desarrollador, tester)
-- "Cliente simulado" o stakeholder de práctica
--->
 
 <br>
 
 ### 1.4 Definiciones, acrónimos y abreviaturas
 
-<!-- 
+
 OBJETIVO DE ESTA SUBSECCIÓN:
-Proporcionar un glosario de términos técnicos, acrónimos y abreviaturas utilizados
-en el documento para garantizar comprensión común.
 
-IMPORTANCIA:
-Evita ambigüedades y malentendidos. Un mismo término puede significar cosas diferentes
-en distintos contextos (ej: "usuario" puede ser usuario final o usuario del sistema).
 
-ORGANIZACIÓN:
-Liste los términos en orden alfabético para facilitar la consulta.
-
-TIPOS DE ENTRADAS:
-1. Términos del dominio del negocio
-2. Términos técnicos de software
-3. Acrónimos del proyecto
-4. Abreviaturas utilizadas en el documento
-
-FORMATO SUGERIDO:
--->
 
 | Término | Definición |
 |---------|------------|
-| **API** | Application Programming Interface (Interfaz de Programación de Aplicaciones). Conjunto de definiciones y protocolos para integrar y comunicar aplicaciones de software. |
-| **CRUD** | Create, Read, Update, Delete. Operaciones básicas de gestión de datos en una base de datos. |
-| **Framework** | Estructura conceptual y tecnológica de soporte definida, normalmente con artefactos o módulos de software concretos, que puede servir de base para la organización y desarrollo de software. |
-| **IEEE 830** | Estándar del Instituto de Ingenieros Eléctricos y Electrónicos para especificaciones de requisitos de software. |
-| **RF** | Requisito Funcional. Especifica una función que debe realizar el sistema. |
-| **RNF** | Requisito No Funcional. Especifica criterios de calidad, restricciones o atributos del sistema. |
-| **SRS** | Software Requirements Specification (Especificación de Requisitos de Software). |
-| **Stakeholder** | Cualquier persona, grupo u organización que puede afectar o ser afectado por el proyecto. |
-| **UI** | User Interface (Interfaz de Usuario). Medio con que el usuario puede comunicarse con el sistema. |
-| **UX** | User Experience (Experiencia de Usuario). Percepción y respuesta del usuario resultante del uso o anticipación del uso de un producto. |
+| **API** | Interfaz de Programación de Aplicaciones. Permite la comunicación e integración entre sistemas. |
+| **COMENSAL** | Usuario final que hace uso del servicio del Restaurante Universitario UniCafé. |
+| **CONTROL DE ACCESO** | Validación del derecho del usuario para ingresar y consumir en el restaurante. |
+| **CRUD** | Operaciones básicas de datos: Crear, Leer, Actualizar y Eliminar. |
+| **INVENTARIO** | Registro y control de los insumos alimentarios del restaurante. |
+| **MENÚ** | Planificación de comidas ofrecidas diariamente en UniCafé. |
+| **RF** | Requisito Funcional: función específica que el sistema debe cumplir. |
+| **RNF** |Requisito No Funcional: características de calidad o restricciones del sistema. |
+| **SIGRU UniCafé** | Sistema Integrado de Gestión del Restaurante Universitario UniCafé (software propuesto). |
+| **SRS** | Documento de Especificación de Requisitos del Software. |
+| **Stakeholder** | Persona o entidad involucrada o afectada por el proyecto. |
+| **SUBSIDIO** | Beneficio económico otorgado a ciertos comensales para cubrir parcial o totalmente el costo del alimento. |
+| **TRAZABILIDAD** | Registro detallado del consumo y movimientos del sistema para seguimiento y control. |
+| **UI** |Interfaz de Usuario: medio visual y funcional para interactuar con el sistema.|
+| **UX** | Experiencia del Usuario: percepción general del comensal al utilizar el sistema. |
 
-<!-- 
-INSTRUCCIONES:
-1. Agregue TODOS los términos técnicos o del dominio que use en el documento
-2. Agregue los acrónimos de su organización o proyecto específico
-3. Defina términos ambiguos de manera precisa para su contexto
-4. Si usa términos en inglés, incluya la traducción al español
-
-EJEMPLO DE TÉRMINOS ESPECÍFICOS DE DOMINIO (Biblioteca):
-
-| Término | Definición |
-|---------|------------|
-| **Ejemplar** | Copia física específica de un material bibliográfico. Un libro puede tener múltiples ejemplares. |
-| **Material bibliográfico** | Cualquier recurso disponible en la biblioteca: libros, revistas, DVDs, etc. |
-| **Préstamo a domicilio** | Tipo de préstamo que permite al usuario llevar material fuera de la biblioteca por un período determinado. |
-| **Préstamo en sala** | Tipo de préstamo que solo permite consultar el material dentro de las instalaciones de la biblioteca. |
-| **Usuario activo** | Usuario registrado que ha realizado al menos un préstamo en los últimos 12 meses. |
--->
-
-[Complete la tabla con los términos específicos de su proyecto]
 
 <br>
 
 ### 1.5 Referencias
 
-<!-- 
+
 OBJETIVO DE ESTA SUBSECCIÓN:
 Listar todos los documentos, estándares, normas y recursos externos referenciados
 en este SRS o que proporcionan contexto adicional.
@@ -352,91 +200,46 @@ TIPOS DE REFERENCIAS COMUNES:
 5. Sitios web y recursos en línea
 
 FORMATO SUGERIDO (estilo académico):
--->
 
-**Estándares y Normas:**
 
-1. IEEE Computer Society. (1998). *IEEE Recommended Practice for Software Requirements Specifications*. IEEE Std 830-1998. Nueva York: IEEE.
+**Estándares y Normas**
 
-2. ISO/IEC/IEEE 29148:2018. *Systems and software engineering — Life cycle processes — Requirements engineering*. Ginebra: International Organization for Standardization.
+1. IEEE Computer Society. (1998). IEEE Recommended Practice for Software Requirements Specifications. IEEE Std 830-1998.
 
-**Documentos del Proyecto:**
+2. ISO/IEC/IEEE 29148:2018. Systems and software engineering — Requirements engineering.
 
-3. [Nombre del Autor]. ([Año]). *Documento de Visión del Proyecto [Nombre del Proyecto]*. [Organización]. Versión [X.X].
+**Documentos del Proyecto**
 
-4. [Nombre del Autor]. ([Año]). *Plan de Gestión del Proyecto [Nombre del Proyecto]*. [Organización].
+3. Facultad de Ingeniería UCP. (2025). Visión del Proyecto SIGRU UniCafé. Universidad Católica de Pereira.
 
-**Documentación Técnica:**
+4. Facultad de Ingeniería UCP. (2025). Plan de Proyecto SIGRU UniCafé. Universidad Católica de Pereira.
 
-5. [Framework/Tecnología]. ([Año]). *Documentación Oficial*. Recuperado de [URL]
+**Documentación Técnica**
 
-6. [Base de Datos]. ([Año]). *Manual de Referencia*. Recuperado de [URL]
+5. PostgreSQL Global Development Group. (2024). PostgreSQL Documentation.
 
-**Bibliografía de Referencia:**
+6. ReactJS. (2024). React – Official Documentation.
 
-7. Sommerville, I. (2016). *Ingeniería de Software* (10ª ed.). México: Pearson Educación.
+**Bibliografía de Referencia**
 
-8. Pressman, R. S., & Maxim, B. R. (2021). *Ingeniería del Software: Un Enfoque Práctico* (9ª ed.). México: McGraw-Hill Education.
+7. Sommerville, I. (2016). Ingeniería de Software (10.ª ed.). Pearson.
 
-**Recursos en Línea:**
+8. Pressman, R. S., & Maxim, B. R. (2021). Ingeniería del Software: Un Enfoque Práctico (9.ª ed.). McGraw-Hill.
 
-9. Material del curso de Levantamiento de Requerimientos. (2025). [Universidad/Institución]. Disponible en [URL del aula virtual].
+**Recursos en Línea**
 
-<!-- 
-EJEMPLO COMPLETO PARA PROYECTO BIBLIOTECARIO:
+9. UCP – Programa de Ingeniería de Sistemas y Telecomunicaciones. (2025). Material académico sobre requisitos de software. Aula virtual UCP.
 
-**Estándares y Normas:**
-1. IEEE Std 830-1998. Software Requirements Specifications.
-2. ISO 2709:2008. Information and documentation — Format for information exchange.
-
-**Documentos del Proyecto:**
-3. Rodríguez, M. (2024). Documento de Visión - Sistema BiblioTech. Biblioteca Municipal Central.
-4. González, A. (2024). Estudio de Factibilidad - Automatización de Procesos Bibliotecarios.
-
-**Documentación Técnica:**
-5. Django Framework Documentation. (2024). Disponible en: https://docs.djangoproject.com/
-6. PostgreSQL 15 Documentation. (2024). Disponible en: https://www.postgresql.org/docs/15/
-
-**Bibliografía:**
-7. Lippincott, S. (2015). Library Automation in Transitional Societies: Lessons from Eastern Europe. Oxford: Chandos Publishing.
--->
-
-[Complete esta sección con las referencias relevantes para su proyecto]
 
 <br>
 
 ### 1.6 Resumen
 
-<!-- 
-OBJETIVO DE ESTA SUBSECCIÓN:
-Proporcionar una sinopsis ejecutiva del contenido y organización del resto del
-documento SRS.
+Este SRS está organizado para facilitar la comprensión del sistema SIGRU UniCafé y sus requerimientos. **La Sección 2** presenta una visión general del sistema, incluyendo el contexto del Restaurante Universitario, las funciones principales, las restricciones, los usuarios involucrados y las dependencias externas. Esta sección ofrece al lector una perspectiva completa del propósito y alcance del software dentro de la operación de UniCafé.
 
-IMPORTANCIA:
-Esta sección orienta al lector sobre:
-- Qué encontrará en cada sección principal
-- Cómo está organizado el documento
-- Dónde buscar información específica
+**La Sección 3** contiene la descripción detallada de los requerimientos funcionales y no funcionales del sistema. Aquí se especifican las características del control de acceso, gestión de subsidios, registro de consumos, inventarios, reportes y demás funcionalidades clave. Además, se estructuran prioridades, criterios de aceptación y cualquier restricción técnica necesaria para el desarrollo.
 
-ESTRUCTURA RECOMENDADA:
-Un párrafo descriptivo por cada sección principal (Sección 2 y Sección 3),
-explicando qué tipo de información contiene.
-
-LONGITUD:
-2-4 párrafos máximo. Debe ser conciso pero informativo.
-
-EJEMPLO ACADÉMICO:
--->
-
-Este documento de Especificación de Requisitos de Software está organizado en cuatro secciones principales que siguen el estándar IEEE 830-1998.
-
-**La Sección 2, Descripción General**, presenta una visión global del sistema sin entrar en detalles técnicos. Incluye la perspectiva del producto dentro del contexto organizacional, un resumen de las funciones principales del sistema, las características de los diferentes tipos de usuarios que interactuarán con el sistema, y las restricciones generales bajo las cuales debe operar. También documenta las suposiciones y dependencias que podrían afectar los requisitos, así como las funcionalidades consideradas para versiones futuras.
-
-**La Sección 3, Requisitos Específicos**, constituye el núcleo técnico del documento. Esta sección detalla exhaustivamente todos los requisitos funcionales (lo que el sistema debe hacer) y los requisitos no funcionales (cómo debe comportarse el sistema). Incluye especificaciones detalladas de las interfaces del sistema (usuario, hardware, software y comunicación), criterios de rendimiento, requisitos de seguridad, fiabilidad y disponibilidad, así como restricciones de diseño y otros atributos de calidad que el sistema debe cumplir.
-
-**La Sección 4, Apéndices**, contiene información complementaria que respalda las secciones anteriores, incluyendo diagramas del sistema, modelos de casos de uso, glosario extendido de términos, y matrices de trazabilidad que vinculan requisitos con casos de prueba. Esta sección también puede incluir prototipos de interfaces, esquemas de bases de datos, y otros artefactos que ayudan a clarificar los requisitos especificados.
-
-[Ajuste este resumen según la organización específica de su documento]
+En conjunto, el documento brinda una guía clara y trazable para el diseño, construcción y validación del sistema propuesto, asegurando alineación entre necesidades institucionales y la solución tecnológica planteada.
 
 <br>
 
