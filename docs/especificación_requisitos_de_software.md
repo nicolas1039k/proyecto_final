@@ -398,87 +398,51 @@ Técnico en sistemas: Persona o personas encargada de mantener y supervisar el b
 
 ### 2.4 Restricciones
 
+# Restricciones Técnicas
+
+- El sistema solo puede funcionar dentro de la infraestructura tecnológica disponible en el restaurante.
+
+- El sistema debe operar exclusivamente dentro del horario establecido por el restaurante; fuera de este horario no se garantizará disponibilidad total.
+
+- La asignación de turnos debe realizarse automáticamente; los empleados no pueden modificarla manualmente.
+
+- El sistema depende de una conexión estable a Internet o red local; no puede operar correctamente sin ella.
+
+- La base de datos debe permanecer en un entorno seguro que cumpla con las normas de seguridad informática definidas por el restaurante.
+
+- El técnico solo puede intervenir en tareas de mantenimiento, actualizaciones y seguridad; no puede modificar procesos operativos.
  
-OBJETIVO DE ESTA SUBSECCIÓN:
-Documentar las limitaciones técnicas, operativas y normativas que puedan afectar el diseño e implementación del sistema del Restaurante Universitario UniCafé.
+# Restricciones Operativas
 
-IMPORTANCIA:
-Las restricciones son críticas para el sistema del Restaurante, ya que determinan los límites de diseño e implementación, impactan los costos y tiempos del proyecto, y deben ser identificadas desde el inicio al ser, en su mayoría, no negociables.
+- Los empleados tienen la responsabilidad obligatoria de registrar todas las ventas; el sistema no puede hacerlo de forma automática sin intervención humana.
 
-TIPOS COMUNES DE RESTRICCIONES:
+- Solo empleados autorizados pueden modificar procesos, datos sensibles o configuraciones administrativas.
 
-1. Restricciones Regulatorias/Legales: cumplimiento de normas sanitarias, de manipulación de alimentos y protección de datos personales.
-2. Restricciones de Hardware: dependencia de dispositivos de control de acceso, terminales de registro y equipos de cocina conectados.
-3. Restricciones de Software: compatibilidad con los sistemas institucionales existentes y limitaciones en licencias o plataformas.
-4. Restricciones de Interfaces con Aplicaciones: necesidad de integración con sistemas universitarios de matrícula, pagos o identificación.
-5. Restricciones Paralelas (procesos concurrentes): coordinación con procesos simultáneos como el servicio de comedor y la actualización de inventarios.
-6. Restricciones de Auditoría: obligación de conservar trazabilidad completa de accesos, subsidios y consumos para control institucional.
-7. Restricciones de Lenguaje de Programación: alineación con los entornos tecnológicos aprobados por la universidad.
-8. Restricciones de Bases de Datos: uso de motores compatibles con la infraestructura existente y políticas de respaldo establecidas.
-9. Restricciones de Estándares: adopción de estándares institucionales de seguridad, usabilidad y accesibilidad.
-10. Restricciones de Presupuesto y Recursos: limitaciones en financiamiento, personal técnico y tiempo de desarrollo.
+- El sistema debe respetar la capacidad real del restaurante para asignar turnos; no puede exceder el aforo permitido.
 
-FORMATO SUGERIDO:
-Organice por categorías para mejor comprensión.
+- Los comensales solo pueden acceder a funciones destinadas específicamente para clientes (menú, turnos, pedidos, subsidios).
 
-EJEMPLO ACADÉMICO:
+- El sistema no puede otorgar subsidios sin validación previa del módulo correspondiente.
 
-**Restricciones Regulatorias y Legales:**
+# Restricciones de Seguridad
 
-- El sistema DEBE cumplir con la Ley de Protección de Datos Personales vigente en Colombia (Ley 1581 de 2012) y las políticas institucionales de confidencialidad.
-- Toda eliminación de datos personales DEBE realizarse de forma irreversible, respetando el derecho al olvido.
-- Los registros de auditoría de accesos y consumos DEBEN conservarse por un período mínimo de dos años para fines de control institucional.
-- El sistema DEBE cumplir con las normas sanitarias y de trazabilidad alimentaria exigidas por el Ministerio de Salud y la Secretaría de Salud municipal.
+- El sistema debe evitar el acceso de usuarios sin permisos a información de inventario, informes, subsidios y datos internos.
 
-**Restricciones Tecnológicas:**
+- La información del comensal y de los empleados debe manejarse conforme a las políticas de privacidad del restaurante.
 
-- El sistema DEBE ejecutarse en la infraestructura tecnológica de la universidad (servidores Linux Ubuntu Server 22.04 LTS, 8GB RAM, 500GB disco).
-- DEBE ser compatible con los navegadores institucionales: Chrome 100+, Firefox 95+ y Edge 100+.
-- DEBE integrarse con los dispositivos de control de acceso y lectores de tarjetas o códigos QR existentes.
-- La solución DEBE funcionar en entorno web, sin requerir instalación en equipos de los operarios.
+- El técnico no puede acceder a información personal de comensales o empleados que no sea necesaria para mantenimiento técnico.
 
-**Restricciones de Implementación:**
+# Restricciones de Dependencias
 
-- El desarrollo DEBE realizarse con tecnologías open source para evitar costos de licenciamiento.
-- El sistema DEBE estar en producción en un plazo máximo de seis meses desde el inicio del proyecto.
-- El equipo de desarrollo ESTÁ LIMITADO a cuatro integrantes: dos desarrolladores, un analista y un tester.
+- El funcionamiento del módulo de usuarios depende de la verificación correcta del comensal y su subsidio.
 
-**Restricciones de Interfaz:**
+- El módulo de notificaciones depende de la información generada en el módulo de turnos y los niveles de suministro.
 
-- El sistema DEBE integrarse con la base de datos institucional de usuarios y con el sistema de control académico (SIGA-UCP).
-- DEBE utilizar el servidor de correo institucional (smtp.ucp.edu.co) para notificaciones y alertas.
-- Las interfaces de comunicación DEBEN cumplir con los estándares REST y JSON definidos por el área de TI de la universidad.
+- El módulo de pedidos depende del inventario actualizado y del turno asignado.
 
-**Restricciones Operacionales:**
+- El módulo de menú depende de la información actualizada de platos, ofertas y descuentos; sin actualización, puede mostrar datos incorrectos.
 
-- El sistema DEBE funcionar con la conexión a Internet existente (20 Mbps simétrica), sin posibilidad de mejora en el corto plazo.
-- La base de datos DEBE SER PostgreSQL versión 13 o superior, conforme al estándar institucional.
-- El sistema NO PUEDE requerir instalación local en los equipos del personal administrativo ni de los comensales.
-
-**Restricciones de Migración de Datos:**
-
-- El sistema DEBE permitir importar datos históricos de usuarios, subsidios y registros de consumo provenientes de hojas de cálculo y archivos CSV.
-- La migración de datos NO PUEDE interrumpir el servicio del restaurante por más de cuatro horas.
-
-**Restricciones de Capacitación:**
-
-- La capacitación del personal operativo DEBE completarse en un máximo de 16 horas (dos jornadas de ocho horas).
-- Los materiales de capacitación DEBEN estar en español y adaptados a los perfiles técnicos del personal.
-
-**Restricciones Presupuestarias:**
-
-- El presupuesto total del proyecto NO PUEDE superar los $25,000 USD o su equivalente en pesos colombianos.
-- NO SE PUEDE ampliar el equipo de trabajo; el desarrollo debe realizarse con el personal asignado institucionalmente.
-
-NOTA IMPORTANTE:
-Sea específico. NO escriba "el sistema debe ser rápido" (eso es un requisito de 
-rendimiento). Escriba restricciones concretas como "el sistema debe ejecutarse 
-en servidores con máximo 8GB de RAM".
-
-
-
-
-<br>
+- La operación del sistema depende del personal capacitado para utilizar correctamente las funciones asignadas a cada rol.
 
 ### 2.5 Suposiciones y dependencias
 
