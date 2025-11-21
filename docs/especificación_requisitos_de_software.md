@@ -482,36 +482,6 @@ en servidores con máximo 8GB de RAM".
 
 ### 2.5 Suposiciones y dependencias
 
-
-OBJETIVO DE ESTA SUBSECCIÓN:
-Documentar todas las suposiciones (assumptions) hechas durante la especificación
-de requisitos y las dependencias externas que podrían afectar el desarrollo o
-funcionamiento del sistema.
-
-IMPORTANCIA CRÍTICA:
-- Las suposiciones son premisas que SE ASUMEN CIERTAS pero que podrían cambiar
-- Si una suposición resulta incorrecta, los requisitos pueden necesitar revisión
-- Las dependencias son factores externos fuera del control del equipo
-- Identificarlas permite gestión de riesgos proactiva
-
-DIFERENCIA CLAVE:
-- SUPOSICIÓN: "Se asume que el usuario tiene conexión a Internet"
-- DEPENDENCIA: "El sistema depende de la disponibilidad de la API externa X"
-
-CATEGORÍAS COMUNES:
-
-1. Suposiciones sobre Usuarios
-2. Suposiciones sobre el Entorno de Operación
-3. Suposiciones sobre Datos
-4. Dependencias de Sistemas Externos
-5. Dependencias de Terceros
-6. Dependencias Tecnológicas
-
-FORMATO SUGERIDO:
-Liste cada suposición/dependencia numerada para fácil referencia.
-
-EJEMPLO ACADÉMICO:
-
 **Suposiciones:**
 
 Comensal
