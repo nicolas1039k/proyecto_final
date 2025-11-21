@@ -648,7 +648,47 @@ Los requisitos y funcionalidades futuras del sistema serán evaluados y prioriza
 
 
 
-<br>
+# Clientes
+
+- El sistema podría integrar métodos biométricos (huella, QR dinámico o reconocimiento facial) para identificar al comensal y validar subsidios.
+
+- Se podrá incorporar un historial de consumo para permitir recomendaciones personalizadas de menú.
+
+- Se añadirá la posibilidad de que los comensales califiquen los platos o el servicio dentro de la aplicación
+
+  # Turnos
+
+- El sistema deberá permitir ajustar automáticamente la asignación de turnos en función de la demanda histórica.
+
+- Se podrá implementar un sistema de predicción de afluencia que sugiera horarios óptimos al comensal.
+
+- El módulo de turnos podría integrarse con sensores físicos (por ejemplo, contadores de personas) para validar asistencia real.
+- 
+  # Pedidos
+
+- Los pedidos podrán automatizarse mediante asistentes virtuales o chatbots internos.
+
+- Se podrá permitir pedidos programados para fechas u horarios específicos.
+
+- El sistema podría integrar pagos digitales o billeteras electrónicas desde la aplicación del comensal.
+
+  # Subsidios
+
+- Se podrá integrar la verificación automática del subsidio con sistemas externos institucionales o gubernamentales.
+
+- El sistema permitirá la gestión de múltiples tipos de subsidios y reglas avanzadas de elegibilidad.
+
+- Se añadirá un módulo predictivo para estimar el uso futuro de subsidios por comensal.
+
+  # Empleados
+
+- El sistema permitirá crear perfiles avanzados de roles con permisos personalizados.
+
+- El módulo de informes podrá generar dashboards dinámicos con IA para análisis de ventas y stock.
+
+- Se podrán validar asistencias del personal mediante huella, QR o geolocalización interna.
+  
+  
 
 ---
 
