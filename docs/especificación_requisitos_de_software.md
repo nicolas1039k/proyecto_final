@@ -317,7 +317,7 @@ Trazabilidad del consumo: registra y analiza el consumo diario para reducir desp
 
 Comunicación y reportes: facilita la interacción con los comensales y genera informes de gestión y desempeño.
 
-El Sistema UniCafe proporcionará las siguientes funciones principales:
+El Sistema UniCafe proporcionará las siguientes funcines principales:
 
 **Gestión de Usuarios y Acceso:**
 
