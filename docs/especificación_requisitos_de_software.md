@@ -2224,14 +2224,20 @@ a soporte"<br>  4a3. Si el usuario selecciona llamar, ir a (llamar a soporte)<br
 <br> 
 **Diagrama de Casos de Uso:**
 
-[Incluya aquí un diagrama UML de casos de uso mostrando actores y casos de uso principales con sus relaciones (include, extend). Puede crearlo con herramientas como draw.io, Lucidchart, PlantUML, o incluso a mano]
 
-[![](https://img.plantuml.biz/plantuml/svg/XLRDRXit4BxlKqpbGoNLSlNdfZ5i8vOi9G7iE92iNA8W62qfYGv5RhXSftLH8ASyG1-Xjvxx27cJF4c7vEvg_LC75cmjvnlEp3VVpFfPQj7OR2EZ7nXV2iNXxENp5vU3iza8TaQzSNTyMbh2ORVpz9TnBqe_29MWmGqa67_05P_QtoK7msEBQYLv1P2bFCQKmnyHm830AwCpnOPQQhEDvcpQC6x2UNvqOep-L3dvCuf-XB4sDsY02GeMYw__Ah0wQLdTMcXhjKl886pu5Jbfiq8bRZ30hhcn8aOP4Pvy8CVxYwpGAegii5J4SDPgjpi7CE4eXGlrsdpzXuZQQ60Spj5o8r3ELVqDDwc_-Tn5GuRGWejR8IyIApRqnB3XKZywEeAJs6h3KwXBP1h4pSTCSCDqmnaZT4Qe3SH22cs9DoDq3J250UoCnwFshzq2CaipPwICvceBzzYPmmw7Ws4HSYfIopVe8vGTWbfn7DmlURokaUU--_7Dea_m7sBgIy_eJsA4YaM24kenLzReLfebH8WseG8e-rrhDWEJpUPStUTohYfa-ho7CmB3pc1mEXeFgl6dsO9kr2beIdI5LB-WXpeb8ZF66yJwgKWJdOhRVRwRpnjAWL4A8uhFGloSnMtuzvs7FFprIYo4UsJ_a_dxRjLrmbT4hxbTSVtIe4enb-t9yELfe-BVg_e_vuexxw7U94OlK5dkuvQtLHpx3v05Eeb9qwvF_3VB5NCqJRaR3f8TWaJgA8bXZNTf6gbhGO5VQIkMHAFFTQuIxN8nXbS3xpkbZPyEomHkgv-dj1o88rYwaML8a9naQBrT2yQuUiVq9zMg49X_UnZGAm6zXm7zi28S3nCkqJ50enPh1PYFdIjs02qZLclREiurTm12aNWmci6Uj-oL1bowWI7AY807hZuyp5LuV0prhJmnzQhaANKiZ0ci7HM02xpIFeaGO6_lkEJae7hRFNltE_RUT-pzE_PRjRXk7Hu6eVXASl5igwYAfMX-URc_kl2UgxUn5mgLx2R6iVUk24Ug8lNeSYs6XYXQNk291xqCLrAdcysnpAveqb7Ih2cqubgd1yqccRvz_XlwU53CBoWDN56RhLVtjoz_-INUQUVGVOAUPv92_ppDqeIhiBOBNBV0FN6uVB3TdIoVUzgM1RRN3bgdtGzCnzc6kfiJoBX5APtEYGTmDKMXCicNsyByXddjrrc_jK_V9sEwjVkuJpVtWIU5G-TnXrxXqEaK7ctu2IQlw5kx_xXll_Jj5hwzYeVaA_VWs-MxD59B_J7ZeJEqN4ai0bVqwgVNSCRT4eJfnTa5hHook-SijXaT2kNRIhp9_9sx5xWz8sx2mizVEa9TwvWwwmv8Z0HPtbS6r4FFT_EUxlfbuGfl0Esribcqb-WZmP9WDM5S-7ZxXjiDOdA8eWoVbgivb1v5p-Yt-wVfFm00)](https://editor.plantuml.com/uml/XLRDRXit4BxlKqpbGoNLSlNdfZ5i8vOi9G7iE92iNA8W62qfYGv5RhXSftLH8ASyG1-Xjvxx27cJF4c7vEvg_LC75cmjvnlEp3VVpFfPQj7OR2EZ7nXV2iNXxENp5vU3iza8TaQzSNTyMbh2ORVpz9TnBqe_29MWmGqa67_05P_QtoK7msEBQYLv1P2bFCQKmnyHm830AwCpnOPQQhEDvcpQC6x2UNvqOep-L3dvCuf-XB4sDsY02GeMYw__Ah0wQLdTMcXhjKl886pu5Jbfiq8bRZ30hhcn8aOP4Pvy8CVxYwpGAegii5J4SDPgjpi7CE4eXGlrsdpzXuZQQ60Spj5o8r3ELVqDDwc_-Tn5GuRGWejR8IyIApRqnB3XKZywEeAJs6h3KwXBP1h4pSTCSCDqmnaZT4Qe3SH22cs9DoDq3J250UoCnwFshzq2CaipPwICvceBzzYPmmw7Ws4HSYfIopVe8vGTWbfn7DmlURokaUU--_7Dea_m7sBgIy_eJsA4YaM24kenLzReLfebH8WseG8e-rrhDWEJpUPStUTohYfa-ho7CmB3pc1mEXeFgl6dsO9kr2beIdI5LB-WXpeb8ZF66yJwgKWJdOhRVRwRpnjAWL4A8uhFGloSnMtuzvs7FFprIYo4UsJ_a_dxRjLrmbT4hxbTSVtIe4enb-t9yELfe-BVg_e_vuexxw7U94OlK5dkuvQtLHpx3v05Eeb9qwvF_3VB5NCqJRaR3f8TWaJgA8bXZNTf6gbhGO5VQIkMHAFFTQuIxN8nXbS3xpkbZPyEomHkgv-dj1o88rYwaML8a9naQBrT2yQuUiVq9zMg49X_UnZGAm6zXm7zi28S3nCkqJ50enPh1PYFdIjs02qZLclREiurTm12aNWmci6Uj-oL1bowWI7AY807hZuyp5LuV0prhJmnzQhaANKiZ0ci7HM02xpIFeaGO6_lkEJae7hRFNltE_RUT-pzE_PRjRXk7Hu6eVXASl5igwYAfMX-URc_kl2UgxUn5mgLx2R6iVUk24Ug8lNeSYs6XYXQNk291xqCLrAdcysnpAveqb7Ih2cqubgd1yqccRvz_XlwU53CBoWDN56RhLVtjoz_-INUQUVGVOAUPv92_ppDqeIhiBOBNBV0FN6uVB3TdIoVUzgM1RRN3bgdtGzCnzc6kfiJoBX5APtEYGTmDKMXCicNsyByXddjrrc_jK_V9sEwjVkuJpVtWIU5G-TnXrxXqEaK7ctu2IQlw5kx_xXll_Jj5hwzYeVaA_VWs-MxD59B_J7ZeJEqN4ai0bVqwgVNSCRT4eJfnTa5hHook-SijXaT2kNRIhp9_9sx5xWz8sx2mizVEa9TwvWwwmv8Z0HPtbS6r4FFT_EUxlfbuGfl0Esribcqb-WZmP9WDM5S-7ZxXjiDOdA8eWoVbgivb1v5p-Yt-wVfFm00)
+<img width="830" height="371" alt="image" src="https://github.com/user-attachments/assets/b2bb24f7-0e83-4a6c-9f2b-5edffd7bdb77" />
 
-[Complete con los casos de uso principales de su sistema. No necesita documentar TODOS los casos de uso con el mismo nivel de detalle. Enfóquese en los más críticos o complejos.]
+<img width="800" height="391" alt="image" src="https://github.com/user-attachments/assets/766d8192-1541-4734-b22d-188ea506bce1" />
 
+<img width="680" height="461" alt="image" src="https://github.com/user-attachments/assets/3be718c2-2213-4a1c-a6ab-d6f145f0e717" />
 
+<img width="934" height="333" alt="image" src="https://github.com/user-attachments/assets/84323015-e7d0-4a5d-8754-8524bd04979e" />
 
+<img width="1013" height="419" alt="image" src="https://github.com/user-attachments/assets/fec03dc3-6d39-4f21-a1ed-183af78e88c8" />
+
+<img width="1062" height="424" alt="image" src="https://github.com/user-attachments/assets/6278a6cf-7a84-4f88-9d24-64f5ba6c52d6" />
+
+<img width="1039" height="416" alt="image" src="https://github.com/user-attachments/assets/59163192-855a-454b-8daa-9fadf426052e" />
 
 
 
